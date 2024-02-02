@@ -1,0 +1,22 @@
+{
+    "name": "mirthe/kirby_wikipedia",
+    "version": "0.1",
+    "description": "Shows summary for Wikipedia article",
+    "homepage": "https://github.com/mirthe/kirby_wikipedia",
+    "keywords": ["kirby-plugin", "wikipedia", "article"],
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mirthe Valentijn",
+            "email": "me@Mirthe.org",
+            "homepage": "https://mirthe.org"
+        }
+    ],
+    "funding": [
+        {
+            "type": "paypal",
+            "url": "https://paypal.me/MirtheValentijn"
+        }
+    ]
+}
