@@ -34,4 +34,5 @@ Spaces are converted to underscores, so you can use
 - Better error handling
 - Cleanup php
 - Handle weird characters in article names better
+- Handle disambiguation for article names
 - ..
