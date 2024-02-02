@@ -31,21 +31,27 @@ Kirby::plugin('mirthe/wikipedia', [
 
                 $article_json = json_decode($output,true);
                 // print_r($article_json); exit();
-                
-                $mijnoutput = '<div class="well" lang="'.$article_json['lang'].'">' ."\n";
-                $mijnoutput .= '<div class="well-img"><img src="';
-                $mijnoutput .= $article_json['thumbnail']['source']; // Or 'originalimage'?
-                $mijnoutput .= '" alt=""></div>';
-                $mijnoutput .= '<div class="well-body">';
-                $mijnoutput .= '<p><a href="'.$article_json['content_urls']['desktop']['page'];
-                $mijnoutput .= '" title="Bekijken op Wikipedia">';
-                $mijnoutput .= $article_json['title']."</a>";
-                if (array_key_exists('description', $article_json)) {
-                $mijnoutput .= "<br>".$article_json['description'];}
-                $mijnoutput .= '</p><p>'.mb_strimwidth($article_json['extract'], 0, 300, '&#8230;').'</p>';
-                $mijnoutput .= "</div></div>\n";
 
-                return $mijnoutput;
+                if ($article_json['title'] == 'Not found.'){
+                    return "<p>Wikipedia article not found..</p>";
+                }{
+                    $mijnoutput = '<div class="well"';
+                    if (array_key_exists('description', $article_json)) {
+                        $mijnoutput .= ' lang="'.$article_json['lang'].'"'; }
+                    $mijnoutput .= '><div class="well-img"><img src="';
+                    $mijnoutput .= $article_json['thumbnail']['source']; // Or 'originalimage'?
+                    $mijnoutput .= '" alt=""></div>';
+                    $mijnoutput .= '<div class="well-body">';
+                    $mijnoutput .= '<p><a href="'.$article_json['content_urls']['desktop']['page'];
+                    $mijnoutput .= '" title="Bekijken op Wikipedia">';
+                    $mijnoutput .= $article_json['title']."</a>";
+                    if (array_key_exists('description', $article_json)) {
+                    $mijnoutput .= "<br>".$article_json['description'];}
+                    $mijnoutput .= '</p><p>'.mb_strimwidth($article_json['extract'], 0, 300, '&#8230;').'</p>';
+                    $mijnoutput .= "</div></div>\n";
+                    return $mijnoutput;
+                }
+
             }
         ]
     ]

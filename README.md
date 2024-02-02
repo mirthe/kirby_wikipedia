@@ -31,5 +31,7 @@ Spaces are converted to underscores, so you can use
 ## Todo
 
 - Offer as an official Kirby plugin
-- Add translations for labels
+- Better error handling
+- Cleanup php
+- Handle weird characters in article names better
 - ..
