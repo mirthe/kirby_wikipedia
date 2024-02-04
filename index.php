@@ -38,10 +38,13 @@ Kirby::plugin('mirthe/wikipedia', [
                     $mijnoutput = '<div class="well"';
                     if (array_key_exists('description', $article_json)) {
                         $mijnoutput .= ' lang="'.$article_json['lang'].'"'; }
-                    $mijnoutput .= '><div class="well-img"><img src="';
+                    $mijnoutput .= '><div class="well-img"><a href="';
+                    $mijnoutput .= $article_json['content_urls']['desktop']['page'];
+                    $mijnoutput .= '" title="Bekijken op Wikipedia"><img src="';
                     $mijnoutput .= $article_json['thumbnail']['source']; // Or 'originalimage'?
-                    $mijnoutput .= '" alt=""></div>';
+                    $mijnoutput .= '" alt=""></a></div>';
                     $mijnoutput .= '<div class="well-body">';
+                    // $mijnoutput .= '<i class="fa-brands fa-wikipedia-w" title="Wikipedia" style="float: right"></i>';
                     $mijnoutput .= '<p><a href="'.$article_json['content_urls']['desktop']['page'];
                     $mijnoutput .= '" title="Bekijken op Wikipedia">';
                     $mijnoutput .= $article_json['title']."</a>";

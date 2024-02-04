@@ -1,6 +1,6 @@
 {
     "name": "mirthe/kirby_wikipedia",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Shows summary for Wikipedia article",
     "homepage": "https://github.com/mirthe/kirby_wikipedia",
     "keywords": ["kirby-plugin", "wikipedia", "article"],
