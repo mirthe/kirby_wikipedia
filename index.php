@@ -26,6 +26,7 @@ Kirby::plugin('mirthe/wikipedia', [
 
                 $ch = curl_init( $url );
                 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+                curl_setopt($ch, CURLOPT_USERAGENT, $site->title());
                 $output = curl_exec( $ch );
                 curl_close( $ch );
 
